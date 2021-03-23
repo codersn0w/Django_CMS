@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'private_diary.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postogresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'private_diary',
         'USER':os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
