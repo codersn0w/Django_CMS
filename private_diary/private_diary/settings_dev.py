@@ -3,40 +3,29 @@ from .settings_common import *
 #SECRET_KEY = 'x75pxr2oawo=(=)(y+j^kt5c46r%w!z$cipio9sq66))o+$f6r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS')]
-
-STATIC_ROOT = '/usr/share/nginx/html/static'
-MEDIA_ROOT = '/usr/share/nginx/html/media'
-
-AWS_SES_ACCESS_KEY_ID = os.environ.get('AWS_SES_ACCESS_KEY_ID')
-AWS_SES_SECRET_ACCESS_KEY = os.environ.get('AWS_SES_SECRET_ACCESS_KEY')
-EMAIL_BACKEND = 'django_ses.SESBackend'
+ALLOWED_HOSTS = []
 
 LOGGING={
     'version':1,
     'disable_existing_loggers': False,
     'loggers':{
         'django':{
-            'handlers': ['file'],
+            'handlers': ['console'],
             'level': 'INFO',
         },
         'diary':{
-            'handlers': ['file'],
-            'level': 'INFO',
+            'handlers': ['console'],
+            'level': 'DEBUG',
         },
     },
 
     'handlers':{
         'console':{
-            'level': 'INFO',
-            'class': 'logging.handlers.TimedRotatingFileHandler',
-            'filename': os.path.join(BASE_DIR, 'logs/django.log'),
-            'formatter': 'prod',
-            'when': 'D',
-            'interval': 1,
-            'backupCount': 7,
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'dev'
         },
     },
 
@@ -51,3 +40,6 @@ LOGGING={
         },
     }
 }
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
