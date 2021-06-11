@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'django_ses',
+    #'django_ses',
 ]
 
 MIDDLEWARE = [
@@ -174,11 +174,8 @@ ACCOUNT_LOGOUT_ON_GET = True
 
 MEDIA_URL = '/media/'
 
+# django-allauthが送信するメールの件名に自動付与される接頭辞をブランクにする設定
+ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
 
-
-
-
-
-
-
-
+# デフォルトのメール送信元を設定
+DEFAULT_FROM_EMAIL = 'podsn0w@gmail.com'
