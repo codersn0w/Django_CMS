@@ -1,4 +1,5 @@
 from .settings_common import *
+import os
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'x75pxr2oawo=(=)(y+j^kt5c46r%w!z$cipio9sq66))o+$f6r'
 
