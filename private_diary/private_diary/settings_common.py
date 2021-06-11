@@ -178,4 +178,4 @@ MEDIA_URL = '/media/'
 ACCOUNT_EMAIL_SUBJECT_PREFIX = ''
 
 # デフォルトのメール送信元を設定
-DEFAULT_FROM_EMAIL = 'podsn0w@gmail.com'
+DEFAULT_FROM_EMAIL = 'admin@example.com'
